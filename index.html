@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Дом в лесу «Весна»</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="img/hero.jpg" alt="Дом A-frame среди сосен">
+    <div class="hero-text">
+      <p class="eyebrow">A-frame · Васильево · 30 минут от Казани</p>
+      <h1>Дом в лесу<br>«Весна»</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="gallery" aria-label="Фотографии">
+      <img src="img/terrace.jpg" alt="Терраса с креслами" loading="lazy">
+      <img src="img/house.jpg" alt="Дом A-frame" loading="lazy">
+      <img src="img/chan.jpg" alt="Фурако с гирляндой" loading="lazy">
+      <img src="img/bath.jpg" alt="Парилка" loading="lazy">
+      <img src="img/stove.jpg" alt="Печь в бане" loading="lazy">
+    </div>
+
+    <section>
+      <h2>Что входит</h2>
+      <div class="services" id="services" role="radiogroup"></div>
+    </section>
+
+    <section>
+      <h2>Акция</h2>
+      <div class="chips" id="promos" role="radiogroup"></div>
+      <p class="hint" id="promo-hint"></p>
+    </section>
+
+    <section>
+      <div class="cal-head">
+        <h2>Свободные даты</h2>
+        <div class="cal-nav">
+          <button type="button" id="prev" aria-label="Предыдущий месяц">‹</button>
+          <span id="month"></span>
+          <button type="button" id="next" aria-label="Следующий месяц">›</button>
+        </div>
+      </div>
+      <div class="cal" id="cal"></div>
+      <p class="hint" id="cal-hint">Выберите дату заезда</p>
+      <div class="legend"><span class="dot busy"></span>занято <span class="dot sel"></span>ваши даты</div>
+    </section>
+
+    <section class="row">
+      <div>
+        <h2>Гости</h2>
+        <p class="hint">до 6 человек</p>
+      </div>
+      <div class="stepper">
+        <button type="button" id="minus" aria-label="Меньше гостей">−</button>
+        <output id="guests">2</output>
+        <button type="button" id="plus" aria-label="Больше гостей">+</button>
+      </div>
+    </section>
+
+    <label class="row toggle">
+      <span><h2>С питомцем</h2><span class="hint">с питомцами можно — предупредим администратора</span></span>
+      <input type="checkbox" id="pets">
+    </label>
+
+    <section class="summary" id="summary" aria-live="polite"></section>
+    <button type="button" class="cta" id="cta" disabled>Перейти к оплате</button>
+    <p class="demo">Демо-версия. Обычные цены условные, цены акций — из канала. Деньги не списываются.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
