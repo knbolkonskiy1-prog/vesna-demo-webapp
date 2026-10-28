@@ -151,7 +151,8 @@ function bind() {
   $("cta").onclick = () => {
     const q = quote();
     const payload = { service: S.service, date_from: iso(S.from), date_to: iso(S.to), guests: S.guests, pets: $("pets").checked, promo: q.promo, total: q.total };
-    if (tg && tg.initData) tg.sendData(JSON.stringify(payload)); // Telegram закроет окно сам
+    // с reply-кнопки initData пустой, поэтому признак Telegram — platform; окно Telegram закроет сам
+    if (tg && tg.platform && tg.platform !== "unknown") tg.sendData(JSON.stringify(payload));
     else alert("Открыто вне Telegram. В боте сюда уйдёт:\n" + JSON.stringify(payload, null, 2));
   };
 }
